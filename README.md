@@ -1,5 +1,17 @@
 # FirstBjornsRadioAngular
 
+## About
+
+This is my first try at creating a Angular client to run against ASP.NET Core Web API project BjornsRadioCore80.
+
+"Initial" commit uses static data for albums and songs.
+
+Björn G. D. Persson, kiltedviking.net
+
+---
+
+(Below is original content of README.md when scaffolding project using Angular CLI.)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
 
 ## Development server

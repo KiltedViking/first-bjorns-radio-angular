@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { AlbumComponent } from '../album/album.component';
-import { Album } from '../../interfaces/album';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Album } from '../../interfaces/album';
+import { AlbumsService } from '../../services/albums.service';
+import { AlbumComponent } from '../album/album.component';
 
 @Component({
   selector: 'app-albums',
@@ -11,27 +12,10 @@ import { CommonModule } from '@angular/common';
   styleUrl: './albums.component.css'
 })
 export class AlbumsComponent {
-  albumList: Album[] = [
-    {
-      id: 1,
-      title: '1999',
-      artist: 'Prince',
-      relaseYear: '1982',
-      comments: ''
-    },
-    {
-      id: 2,
-      title: 'The Highland Connection',
-      artist: 'Runrig',
-      relaseYear: '1979',
-      comments: ''
-    },
-    {
-      id: 3,
-      title: 'New Gold Dream (81-82-83-84)',
-      artist: 'Simple Minds',
-      relaseYear: '1982',
-      comments: ''
-    }
-  ];
+  albumService: AlbumsService = inject(AlbumsService);
+  albumList: Album[];
+
+  constructor() {
+    this.albumList = this.albumService.getAllAlbums();
+  }
 }
